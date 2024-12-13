@@ -3,5 +3,5 @@
 
 int main(){
 printf("Pozdrowienia z Wenecji!\n");
-return 0;
+return 1;
 }
