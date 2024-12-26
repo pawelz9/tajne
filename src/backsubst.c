@@ -7,14 +7,14 @@
 int backsubst(Matrix *x, Matrix *mat, Matrix *b) {
     if (mat->r != mat->c || mat->r != b->r || b->c != 1 || x->r != mat->r || x->c != 1) {
         //błąd nieprawidłowych rozmiarów macierzy
-		printf("błąd nieprawidłowych rozmiarów macierzy");
+	printf("błąd nieprawidłowych rozmiarów macierzy");
         return 2;
     }
 
     for (int i = mat->r - 1; i >= 0; i--) {
         if (mat->data[i][i] == 0.0) {
             //błąd dzielenia przez 0 (element na diagonali = 0)
-			printf("błąd dzielenia przez 0 (element na diagonali = 0)\n");
+	    printf("błąd dzielenia przez 0 (element na diagonali = 0)\n");
             return 1;
         }
 
