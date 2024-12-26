@@ -1,4 +1,5 @@
 #include "backsubst.h"
+#include <stdio.h>
 /**
  * Zwraca 0 - wsteczne podstawienie zakonczone sukcesem
  * Zwraca 1 - błąd dzielenia przez 0 (element na diagonali = 0)
@@ -7,14 +8,14 @@
 int backsubst(Matrix *x, Matrix *mat, Matrix *b) {
     if (mat->r != mat->c || mat->r != b->r || b->c != 1 || x->r != mat->r || x->c != 1) {
         //błąd nieprawidłowych rozmiarów macierzy
-	printf("błąd nieprawidłowych rozmiarów macierzy");
+	printf("blad nieprawidlowych rozmiarow macierzy");
         return 2;
     }
 
     for (int i = mat->r - 1; i >= 0; i--) {
         if (mat->data[i][i] == 0.0) {
             //błąd dzielenia przez 0 (element na diagonali = 0)
-	    printf("błąd dzielenia przez 0 (element na diagonali = 0)\n");
+	    printf("blad dzielenia przez 0 (element na diagonali = 0)\n");
             return 1;
         }
 
